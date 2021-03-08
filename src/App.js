@@ -1,4 +1,6 @@
 import Header from "./Header";
+import React from "react";
+import ReactDOM from "react-dom";
 import "./App.css";
 function App() {
   let subscribers = [
@@ -13,10 +15,11 @@ function App() {
       phone: "7777777777",
     },
   ];
+
   return (
     <div>
       <div className="component-body-container">
-        <Header />
+        <Header heading="Phone Directory" />
         <button className="custom-btn add-btn">Add</button>
         <div className="grid-container heading-container">
           <span className="grid-item name-heading">Name</span>
