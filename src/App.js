@@ -28,6 +28,7 @@ function App() {
             <div className="grid-container" key={subs.id}>
               <span className="grid-item">{subs.name}</span>
               <span className="grid-item">{subs.phone}</span>
+              <button className="custom-btn delete-btn">Delete</button>
             </div>
           );
         })}

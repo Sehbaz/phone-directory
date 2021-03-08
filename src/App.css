@@ -16,6 +16,11 @@
     color: white;
     margin-top: 20px;
 }
+.delete-btn{
+    color:white;
+    background-color: darkred;
+    
+}
 .grid-container{
     display: grid;
     grid-template-columns: 40% 30% auto;
