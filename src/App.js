@@ -16,6 +16,9 @@ function App() {
     },
   ];
 
+  function deleteHandler(message) {
+    alert(message);
+  }
   return (
     <div>
       <div className="component-body-container">
@@ -31,7 +34,12 @@ function App() {
             <div className="grid-container" key={subs.id}>
               <span className="grid-item">{subs.name}</span>
               <span className="grid-item">{subs.phone}</span>
-              <button className="custom-btn delete-btn">Delete</button>
+              <button
+                className="custom-btn delete-btn"
+                onClick={deleteHandler.bind(this, "Delete Clicked")}
+              >
+                Delete
+              </button>
             </div>
           );
         })}
