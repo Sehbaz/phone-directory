@@ -36,7 +36,7 @@ function App() {
               <span className="grid-item">{subs.phone}</span>
               <button
                 className="custom-btn delete-btn"
-                onClick={deleteHandler.bind(this, "Delete Clicked")}
+                onClick={deleteHandler.bind(this, subs.id)}
               >
                 Delete
               </button>
