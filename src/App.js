@@ -1,7 +1,7 @@
 import Header from "./Header";
 import React from "react";
+import ReactDOM from "react-dom";
 import "./App.css";
-
 function App() {
   let subscribers = [
     {
@@ -15,9 +15,6 @@ function App() {
       phone: "7777777777",
     },
   ];
-  function clickHandler(message) {
-    alert("Delete handler clicked");
-  }
 
   return (
     <div>
@@ -34,12 +31,7 @@ function App() {
             <div className="grid-container" key={subs.id}>
               <span className="grid-item">{subs.name}</span>
               <span className="grid-item">{subs.phone}</span>
-              <button
-                className="custom-btn delete-btn"
-                onClick={clickHandler.bind(this, "Delete Click Handler")}
-              >
-                Delete
-              </button>
+              <button className="custom-btn delete-btn">Delete</button>
             </div>
           );
         })}
