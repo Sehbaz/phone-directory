@@ -3,7 +3,22 @@ import Header from "./Header";
 import "./App.css";
 import "./AddSubscriber.css";
 class AddSubscriber extends Component {
+  constructor() {
+    super();
+    this.state = {
+      id: 0,
+      name: "",
+      phone: "",
+    };
+  }
+  inputChangedHandler = (e) => {
+    const state = this.state;
+    state[e.target.name] = e.target.value;
+    this.setState(state);
+  };
   render() {
+    //Capturing the onchage value to the variable
+    const { name, phone } = this.state;
     return (
       <div>
         <Header heading="Add Subscriber" />
@@ -14,14 +29,26 @@ class AddSubscriber extends Component {
               Name :
             </label>
             <br />
-            <input type="text" className="input-control"></input>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              className="input-control"
+              onChange={this.inputChangedHandler}
+            ></input>
             <br />
             <br />
             <label htmlFor="phone" className="label-control">
               Phone :
             </label>
             <br />
-            <input type="text" className="input-control"></input>
+            <input
+              name="phone"
+              type="text"
+              name="phone"
+              className="input-control"
+              onChange={this.inputChangedHandler}
+            ></input>
             <br />
             <br />
             <div className="subscriber-info-container">
@@ -29,9 +56,9 @@ class AddSubscriber extends Component {
                 Subscriber to be added :{" "}
               </span>
               <br />
-              <span className="susbcriber-info">Name :</span>
+              <span className="susbcriber-info">Name : {name}</span>
               <br />
-              <span className="susbcriber-info">Phone :</span>
+              <span className="susbcriber-info">Phone : {phone}</span>
             </div>
             <button type="submit" className="custom-btn add-btn">
               ADD
