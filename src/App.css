@@ -1,5 +1,6 @@
 .component-body-container{
     padding: 20px;
+    
 }
 .custom-btn{
     padding:10px;
@@ -25,10 +26,12 @@
     display: grid;
     grid-template-columns: 40% 30% auto;
     margin-bottom: 10px;
+   
 }
 .header-container{
     margin:30px 0 30px 0;
     width: 60%;
+   
 }
 .grid-item{
     background-color: rgba(255, 255, 255, 0.8);
@@ -41,10 +44,4 @@
     font-weight:600;
     color:#808080;
     text-transform: uppercase;
-}
-body{
-    
-    width: 100%;
-    display: flex;
-   justify-content: center;
 }
