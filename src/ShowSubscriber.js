@@ -1,28 +1,9 @@
 import Header from "./Header";
 import React, { Component, useState } from "react";
-import ReactDOM from "react-dom";
-import "./App.css";
+import "./ShowSubscriber.css";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      susbscriberListShow: [],
-    };
-  }
   render() {
-    let subscribers = [
-      {
-        id: 1,
-        name: "Shilpa Bhat",
-        phone: "8888888888",
-      },
-      {
-        id: 2,
-        name: "Srishti Gupta",
-        phone: "9999999999",
-      },
-    ];
     function deleteHandler(e) {
       alert("Hi i am delete button" + e);
     }
@@ -37,7 +18,7 @@ class App extends Component {
 
             <span className="grid-item phone-heading">Phone</span>
           </div>
-          {this.state.susbscriberListShow.map((subs) => {
+          {this.props.subscriberList.map((subs) => {
             return (
               <div className="grid-container" key={subs.id}>
                 <span className="grid-item">{subs.name}</span>
