@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 
 import "./AddSubscriber.css";
+import { Link } from "react-router-dom";
 class AddSubscriber extends Component {
   constructor() {
     super();
@@ -28,6 +29,7 @@ class AddSubscriber extends Component {
       name: "",
       phone: "",
     });
+    this.props.history.push("/");
   };
   render() {
     //Capturing the onchage value to the variable
@@ -36,7 +38,9 @@ class AddSubscriber extends Component {
       <div>
         <Header heading="Add Subscriber" />
         <div className="component-body-container">
-          <button className="custom-btn">Back</button>
+          <Link to="/">
+            <button className="custom-btn">Back</button>
+          </Link>
           <form
             className="subscriber-form"
             onSubmit={this.onFormSubmitted.bind(this)}
@@ -61,7 +65,6 @@ class AddSubscriber extends Component {
             <input
               name="phone"
               type="text"
-              name="phone"
               className="input-control"
               onChange={this.inputChangedHandler}
             ></input>
@@ -76,6 +79,7 @@ class AddSubscriber extends Component {
               <br />
               <span className="susbcriber-info">Phone : {phone}</span>
             </div>
+
             <button type="submit" className="custom-btn add-btn">
               ADD
             </button>

@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import AddSubscriber from "./AddSubscriber";
 import ShowSubscriber from "./ShowSubscriber";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class PhoneDirectory extends Component {
   constructor() {
     super();
+
     this.state = {
       subscriberList: [
         {
@@ -30,13 +32,35 @@ class PhoneDirectory extends Component {
     subscriberList.push(newSubscriber);
     //old subscriber list is being replaced with the new subscriber list
     this.setState({ subscriberList: subscriberList });
-    //Console loggin the state
-    console.log(this.state.subscriberList);
   };
   render() {
     return (
+      <Router>
+        <Route
+          exact
+          path="/"
+          render={(props) => (
+            <ShowSubscriber
+              {...props}
+              subscriberList={this.state.subscriberList}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/add"
+          render={({ history }, props) => (
+            <AddSubscriber
+              history={history}
+              {...props}
+              addSubscriberHandler={this.addSubscriberHandler}
+            />
+          )}
+        />
+      </Router>
+
       //<AddSubscriber addSubscriberHandler={this.addSubscriberHandler} />;
-      <ShowSubscriber subscriberList={this.state.subscriberList} />
+      //<ShowSubscriber subscriberList={this.state.subscriberList} />
     );
   }
 }

@@ -1,6 +1,7 @@
 import Header from "./Header";
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import "./ShowSubscriber.css";
+import { Link } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -10,9 +11,11 @@ class App extends Component {
 
     return (
       <div>
+        <Header heading="Phone Directory" />
         <div className="component-body-container">
-          <Header heading="Phone Directory" />
-          <button className="custom-btn add-btn">Add</button>
+          <Link to="/add">
+            <button className="custom-btn add-btn">Add</button>
+          </Link>
           <div className="grid-container heading-container">
             <span className="grid-item name-heading">Name</span>
 
