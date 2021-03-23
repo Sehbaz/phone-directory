@@ -3,12 +3,11 @@ import React, { Component } from "react";
 import "./ShowSubscriber.css";
 import { Link } from "react-router-dom";
 
-class App extends Component {
+class ShowSubscriber extends Component {
   render() {
-    function deleteHandler(e) {
-      alert("Hi i am delete button" + e);
+    function onDeletedClick(subscriberId) {
+      this.props.deleteSubscriberHandler(subscriberId);
     }
-
     return (
       <div>
         <Header heading="Phone Directory" />
@@ -28,7 +27,7 @@ class App extends Component {
                 <span className="grid-item">{subs.phone}</span>
                 <button
                   className="custom-btn delete-btn"
-                  onClick={deleteHandler.bind(this, subs.id)}
+                  onClick={onDeletedClick.bind(this, subs.id)}
                 >
                   Delete
                 </button>
@@ -41,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default ShowSubscriber;

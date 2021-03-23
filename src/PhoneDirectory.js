@@ -32,6 +32,20 @@ class PhoneDirectory extends Component {
     subscriberList.push(newSubscriber);
     //old subscriber list is being replaced with the new subscriber list
     this.setState({ subscriberList: subscriberList });
+
+    console.log(this.state.subscriberList);
+  };
+  deleteSubscriberHandler = (subscriberId) => {
+    let subscriberList = this.state.subscriberList;
+    let subscriberIndex = 0;
+    subscriberList.forEach(function (subscriber, index) {
+      if (subscriber.id === subscriberId) {
+        subscriberIndex = index;
+      }
+    }, this);
+    let newSubscribers = subscriberList;
+    newSubscribers.splice(subscriberIndex, 1);
+    this.setState({ subscriberList: newSubscribers });
   };
   render() {
     return (
@@ -43,6 +57,7 @@ class PhoneDirectory extends Component {
             <ShowSubscriber
               {...props}
               subscriberList={this.state.subscriberList}
+              deleteSubscriberHandler={this.deleteSubscriberHandler}
             />
           )}
         />
